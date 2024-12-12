@@ -25,11 +25,7 @@ export const GlobalStyle = createGlobalStyle`
     outline: none;
   }
 
-  input {
-    &:focus {
-      outline: 2px solid ${color.primary[200]};
-    }
-  }
+
 
 
 `;
