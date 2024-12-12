@@ -166,7 +166,7 @@ const SignUpContents = styled.div`
 `;
 
 const AddressContainer = styled.div`
-  width: 194px;
+  width: 340px;
 `;
 
 const EmailIcon = styled.div`
