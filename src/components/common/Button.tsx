@@ -10,7 +10,7 @@ interface isButton {
 
 export const Button = ({ children, isColor = false, onclick }: isButton) => {
   return (
-    <ButtonContainer isColor={isColor} onClick={onclick}>
+    <ButtonContainer isColor={isColor} onClick={onclick} type="button">
       {children}
     </ButtonContainer>
   );

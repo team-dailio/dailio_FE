@@ -8,12 +8,12 @@ export const Header = () => {
     <HeaderContainer>
       <img src={logo} alt="logo" />
       <NavContainer>
-        <NavContent $isColor={false}>Project</NavContent>
-        <NavContent $isColor={false}>Schedule</NavContent>
-        <NavContent $isColor={false}>Chat</NavContent>
-        <NavContent $isColor={false}>Document</NavContent>
+        <NavContent>Project</NavContent>
+        <NavContent>Schedule</NavContent>
+        <NavContent>Chat</NavContent>
+        <NavContent>Document</NavContent>
       </NavContainer>
-      <NavContent $isColor={true}>Login</NavContent>
+      <LoginContent>Login</LoginContent>
     </HeaderContainer>
   );
 };
@@ -32,7 +32,7 @@ const NavContainer = styled.nav`
   gap: 16px;
 `;
 
-const NavContent = styled.button<{ $isColor: boolean }>`
+const NavContent = styled.button`
   width: 102px;
   height: 60px;
   background-color: transparent;
@@ -42,5 +42,9 @@ const NavContent = styled.button<{ $isColor: boolean }>`
   font-size: ${fonts.body[1].fontSize};
   font-weight: ${fonts.body[1].fontWeight};
   line-height: ${fonts.body[1].lineHeight};
-  color: ${({ $isColor }) => ($isColor ? color.primary[500] : color.gray[400])};
+  color: ${color.gray[400]};
+`;
+
+const LoginContent = styled(NavContent)`
+  color: ${color.primary[500]};
 `;
