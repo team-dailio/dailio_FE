@@ -1,5 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 import "../fonts/font.css";
+import { color } from "./themes/color";
 
 export const GlobalStyle = createGlobalStyle`
   *{
@@ -22,6 +23,12 @@ export const GlobalStyle = createGlobalStyle`
     cursor: pointer;
     border: none;
     outline: none;
+  }
+
+  input {
+    &:focus {
+      outline: 2px solid ${color.primary[200]};
+    }
   }
 
 
