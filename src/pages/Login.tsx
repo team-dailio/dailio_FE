@@ -5,6 +5,7 @@ import { color } from "../style/themes/color";
 import { Inputs } from "../components/common/Inputs";
 import { useState } from "react";
 import { Button } from "../components/common/Button";
+import { useNavigate } from "react-router-dom";
 
 interface isInput {
   id: string;
@@ -21,6 +22,11 @@ export const Login = () => {
   const [isAllFilled, setIsAllFilled] = useState<boolean>(false);
 
   const { id, password } = input;
+  const navigate = useNavigate();
+
+  const signUpClick = () => {
+    navigate("/signup");
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -84,7 +90,7 @@ export const Login = () => {
             <Button children="로그인" isColor={isAllFilled} />
             <SignUpContainer>
               <SignUpTitle>아직 가입하지 않으셨나요?</SignUpTitle>
-              <SignUpNav>회원가입</SignUpNav>
+              <SignUpNav onClick={signUpClick}>회원가입</SignUpNav>
             </SignUpContainer>
           </FooterContainer>
         </LoginContents>
