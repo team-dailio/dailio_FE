@@ -34,10 +34,14 @@ export const Login = () => {
     if (name === "id") {
       if (value !== "") {
         setIsId(true);
+      } else {
+        setIsId(false);
       }
     } else {
       if (value !== "") {
         setIsPsw(true);
+      } else {
+        setIsPsw(false);
       }
     }
   };
