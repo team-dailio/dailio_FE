@@ -28,13 +28,17 @@ export const Login = () => {
   };
 
   const isBlur = (e: React.FocusEvent<HTMLInputElement>) => {
-    const { name } = e.target;
+    const { name, value } = e.target;
     const isFilled = Object.values(input).every((val) => val.trim() !== "");
     setIsAllFilled(isFilled);
     if (name === "id") {
-      setIsId(true);
+      if (value !== "") {
+        setIsId(true);
+      }
     } else {
-      setIsPsw(true);
+      if (value !== "") {
+        setIsPsw(true);
+      }
     }
   };
 
