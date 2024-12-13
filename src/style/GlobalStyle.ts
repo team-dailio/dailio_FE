@@ -1,5 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 import "../fonts/font.css";
+import { color } from "./themes/color";
 
 export const GlobalStyle = createGlobalStyle`
   *{
@@ -23,6 +24,8 @@ export const GlobalStyle = createGlobalStyle`
     border: none;
     outline: none;
   }
+
+
 
 
 `;
