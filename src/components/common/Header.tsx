@@ -2,8 +2,20 @@ import styled from "styled-components";
 import { fonts } from "../../style/themes/fonts";
 import { color } from "../../style/themes/color";
 import logo from "../../assets/icons/logo/headerLogo.svg";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export const Header = () => {
+  const { pathname } = useLocation();
+  const navigate = useNavigate();
+
+  const loginClick = () => {
+    if (pathname === "/login") {
+      window.location.reload();
+    } else {
+      navigate("/login");
+    }
+  };
+
   return (
     <HeaderContainer>
       <img src={logo} alt="logo" />
@@ -13,7 +25,7 @@ export const Header = () => {
         <NavContent>Chat</NavContent>
         <NavContent>Document</NavContent>
       </NavContainer>
-      <LoginContent>Login</LoginContent>
+      <LoginContent onClick={loginClick}>Login</LoginContent>
     </HeaderContainer>
   );
 };
