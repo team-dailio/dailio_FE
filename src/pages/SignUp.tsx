@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Header } from "../components/common";
+import { Header } from "../components/common/_index";
 import { fonts } from "../style/themes/fonts";
 import { color } from "../style/themes/color";
 import { Button } from "../components/common/Button";
