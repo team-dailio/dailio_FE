@@ -5,10 +5,10 @@ import { color, fonts } from "../../style";
 
 export const StyledCalendarWrapper = styled.div`
   width: 80%;
-  display: flex; // 플렉스 박스를 사용하여 가운데 정렬
-  justify-content: center; // 수평 중앙 정렬
-  overflow: hidden; // 캘린더 밖으로 흐르는 콘텐츠 숨기기
-  box-sizing: border-box; // 박스 모델의 크기를 border까지 포함시킴
+  display: flex; 
+  justify-content: center; 
+  overflow: hidden; 
+  box-sizing: border-box; 
   .react-calendar {
     width: 100%;
     border: none;
@@ -24,15 +24,15 @@ export const StyledCalendarWrapper = styled.div`
 
   /* 네비게이션 폰트 설정 */
   .react-calendar__navigation button {
-    min-width: 36px; // 버튼의 최소 너비 설정
-    background: none; // 배경 제거
-    font-size: ${fonts.caption[1]}; // 글꼴 크기 설정
-    font-weight: bold; // 글꼴 두껍게
-    color: ${color.primary[500]}; // 글자 색상 설정
+    min-width: 36px; 
+    background: none; 
+    font-size: ${fonts.caption[1]}; 
+    font-weight: bold; 
+    color: ${color.primary[500]}; 
   }
 
   .react-calendar__navigation button:hover {
-    background: ${color.gray[100]}; // 버튼 호버 시 배경색 변경
+    background: ${color.gray[100]}; 
   }
 
   /* 년/월 상단 네비게이션 칸 크기 줄이기 */
@@ -41,7 +41,7 @@ export const StyledCalendarWrapper = styled.div`
   }
 
   .react-calendar__navigation__label:hover {
-    color: ${color.primary[400]}; // 레이블 호버 시 색상 변경
+    color: ${color.primary[400]}; 
   }
 
   /* 요일 밑줄 제거 */
@@ -51,11 +51,11 @@ export const StyledCalendarWrapper = styled.div`
   }
 
   .react-calendar__month-view__days__day:nth-child(7n) {
-    color: ${color.primary[500]}; /* 토요일 색상 변경 */
+    color: ${color.primary[500]};
   }
 
   .react-calendar__month-view__weekdays__weekday:nth-child(7) abbr {
-    color: ${color.primary[500]}; /* 요일 이름(SAT) */
+    color: ${color.primary[500]};
   }
 
   /* 일요일에만 빨간 폰트 */
@@ -65,7 +65,7 @@ export const StyledCalendarWrapper = styled.div`
 
   .react-calendar__month-view__weekdays__weekday:first-child abbr {
     color: ${color.interactive.error};
-  } // Sunday 빨간색
+  } 
 
   /* 일 날짜 간격 */
   .react-calendar__tile {
@@ -85,9 +85,9 @@ export const StyledCalendarWrapper = styled.div`
 
   /* 오늘 날짜 스타일 적용 */
   .react-calendar__tile--now {
-    background-color: ${color.primary[300]}; // 오늘 날짜 배경색 파랑색 적용
-    color: ${color.primary[100]}; // 글자색 변경
-    font-weight: bold; // 굵기 조절
+    background-color: ${color.primary[300]}; 
+    color: ${color.primary[100]}; 
+    font-weight: bold; 
     border-radius: 0.3rem;
   }
 `;

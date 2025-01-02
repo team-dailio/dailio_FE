@@ -5,9 +5,9 @@ type ValuePiece = Date | null;
 type Value = ValuePiece | [ValuePiece, ValuePiece];
 
 export const MainCalendar = () => {
-  const today = new Date();
+  const today: Date = new Date();
   const [date, setDate] = useState<Value>(today);
-  const [activeStartDate, setActiveStartDate] = useState(new Date());
+  const [activeStartDate, setActiveStartDate] = useState<Date>(new Date());
 
   const handleDateChange = (newDate: Value) => {
     setDate(newDate);
