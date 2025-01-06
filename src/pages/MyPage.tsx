@@ -5,6 +5,7 @@ import { color, fonts } from "../style";
 import Profil from "../assets/icons/profil.svg";
 import Edit from "../assets/icons/edit.svg";
 import { useState } from "react";
+import { InputPassword } from "../components/modal/InputPassword";
 
 interface ITodoType {
   check: boolean;
@@ -30,6 +31,11 @@ export const MyPage = () => {
       content: "디자인하기3",
     },
   ]);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  const handleCancel = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
     <>
@@ -51,7 +57,9 @@ export const MyPage = () => {
           </MainProfil>
           <ButtonContainer>
             <LogoutBtn>Logout</LogoutBtn>
-            <DelField>Delete Account</DelField>
+            <DelField onClick={() => setIsOpen(!isOpen)}>Delete Account</DelField>
+            {/* 비밀번호 확인 모달 */}
+            <InputPassword isOpen={isOpen} onCancel={handleCancel} />
           </ButtonContainer>
         </ProfileBar>
         <MainCalendar />
@@ -86,7 +94,6 @@ const TodoList = styled.div`
 
 const TodoContainer = styled.div`
   width: 75%;
-  height: 420px;
   margin-top: 25px;
   background-color: ${color.gray[100]};
   padding: 8px;

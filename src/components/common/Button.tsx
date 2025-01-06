@@ -1,15 +1,19 @@
 import styled from "styled-components";
-import { color } from "../../style/themes/color";
-import { fonts } from "../../style/themes/fonts";
+import { color, fonts } from "../../style";
 
 interface isButton {
   children: string;
   isColor?: boolean;
+  isCancel?: boolean;
   onclick?: () => void;
 }
 
-export const Button = ({ children, isColor = false, onclick }: isButton) => {
-  return (
+export const Button = ({ children, isColor = false, isCancel = false, onclick }: isButton) => {
+  return isCancel ? (
+    <CancelButton onClick={onclick} type="button">
+      {children}
+    </CancelButton>
+  ) : (
     <ButtonContainer isColor={isColor} onClick={onclick} type="button">
       {children}
     </ButtonContainer>
@@ -27,4 +31,16 @@ const ButtonContainer = styled.button<{ isColor: boolean }>`
   font-weight: ${fonts.body[2].fontWeight};
   line-height: ${fonts.body[2].lineHeight};
   opacity: ${({ isColor }) => (isColor ? "1" : "0.4")};
+`;
+
+const CancelButton = styled.button`
+  width: 100%;
+  padding: 12px 43.5px;
+  border-radius: 12px;
+  font-size: ${fonts.body[2].fontSize};
+  font-weight: ${fonts.body[2].fontWeight};
+  line-height: ${fonts.body[2].lineHeight};
+  background-color: ${color.interactive.white};
+  color: ${color.primary[500]};
+  border: 1px solid ${color.primary[500]};
 `;

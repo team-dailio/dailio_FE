@@ -1,6 +1,5 @@
 import { createGlobalStyle } from "styled-components";
 import "../fonts/font.css";
-import { color } from "./themes/color";
 
 export const GlobalStyle = createGlobalStyle`
   *{
@@ -9,6 +8,11 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
     font-family: 'NotoSans-VariableFont_wdth,wght';
+
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none
   }
   a {
     text-decoration: none;
@@ -24,8 +28,4 @@ export const GlobalStyle = createGlobalStyle`
     border: none;
     outline: none;
   }
-
-
-
-
 `;

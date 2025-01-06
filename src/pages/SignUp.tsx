@@ -193,7 +193,7 @@ const IdContainer = styled.div`
   display: flex;
   height: 60px;
   gap: 10px;
-`;
+`; 
 const BtnContainer = styled.div`
   width: 216px;
 `;
