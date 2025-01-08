@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Header } from "../components/common";
+import { Header } from "../components/common/_index";
 import { fonts } from "../style/themes/fonts";
 import { color } from "../style/themes/color";
 import { Button } from "../components/common/Button";
@@ -193,7 +193,7 @@ const IdContainer = styled.div`
   display: flex;
   height: 60px;
   gap: 10px;
-`;
+`; 
 const BtnContainer = styled.div`
   width: 216px;
 `;
