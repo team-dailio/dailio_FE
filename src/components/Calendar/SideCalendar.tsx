@@ -29,7 +29,8 @@ export const SideCalendar = () => {
         showNeighboringMonth={false}
         next2Label={null}
         prev2Label={null}
-        minDetail="year"
+        minDetail="month"
+        maxDetail="month"
         activeStartDate={activeStartDate}
         onActiveStartDateChange={({ activeStartDate }) => setActiveStartDate(activeStartDate || today)}
       />

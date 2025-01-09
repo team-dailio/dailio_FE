@@ -25,12 +25,12 @@ export const MainCalendar = () => {
           return `${month}, ${year}`;
         }}
         formatShortWeekday={(_, date) => date.toLocaleString("en-US", { weekday: "short" }).slice(0, 3)}
+        prev2Label={null}
         calendarType="gregory"
         showNeighboringMonth={false}
         next2Label={null}
-        prev2Label={null}
-        minDetail="year"
-        activeStartDate={activeStartDate}
+        minDetail="month"
+        maxDetail="month"        activeStartDate={activeStartDate}
         onActiveStartDateChange={({ activeStartDate }) => setActiveStartDate(activeStartDate || today)}
         tileContent={({ date, view }) => {
           if (
